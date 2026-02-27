@@ -1,0 +1,113 @@
+# =============================================================================
+# Cloud Build CI/CD Pipeline - Credit Risk Assessment AI
+# =============================================================================
+# Triggered on: push to main branch
+# =============================================================================
+
+steps:
+  # ---------------------------------------------------------------------------
+  # Step 1: Build Docker Image
+  # ---------------------------------------------------------------------------
+  - name: 'gcr.io/cloud-builders/docker'
+    id: 'build'
+    args:
+      - 'build'
+      - '-t'
+      - 'gcr.io/$PROJECT_ID/credit-risk-api:$COMMIT_SHA'
+      - '-t'
+      - 'gcr.io/$PROJECT_ID/credit-risk-api:latest'
+      - '.'
+
+  # ---------------------------------------------------------------------------
+  # Step 2: Run Tests (optional - uncomment when tests are ready)
+  # ---------------------------------------------------------------------------
+  # - name: 'gcr.io/$PROJECT_ID/credit-risk-api:$COMMIT_SHA'
+  #   id: 'test'
+  #   entrypoint: 'pytest'
+  #   args: ['tests/', '-v', '--tb=short']
+  #   waitFor: ['build']
+
+  # ---------------------------------------------------------------------------
+  # Step 3: Push Image to Container Registry
+  # ---------------------------------------------------------------------------
+  - name: 'gcr.io/cloud-builders/docker'
+    id: 'push'
+    args:
+      - 'push'
+      - '--all-tags'
+      - 'gcr.io/$PROJECT_ID/credit-risk-api'
+    waitFor: ['build']
+
+  # ---------------------------------------------------------------------------
+  # Step 4: Deploy to Cloud Run
+  # ---------------------------------------------------------------------------
+  - name: 'gcr.io/cloud-builders/gcloud'
+    id: 'deploy'
+    args:
+      - 'run'
+      - 'deploy'
+      - 'credit-risk-api'
+      - '--image'
+      - 'gcr.io/$PROJECT_ID/credit-risk-api:$COMMIT_SHA'
+      - '--region'
+      - '${_REGION}'
+      - '--platform'
+      - 'managed'
+      - '--allow-unauthenticated'
+      - '--port'
+      - '8080'
+      - '--memory'
+      - '2Gi'
+      - '--cpu'
+      - '2'
+      - '--timeout'
+      - '300'
+      - '--min-instances'
+      - '0'
+      - '--max-instances'
+      - '10'
+      - '--set-secrets'
+      - 'OPENAI_API_KEY=openai-api-key:latest,LANGSMITH_API_KEY=langsmith-api-key:latest'
+      - '--set-env-vars'
+      - 'OPENAI_MODEL=gpt-4o,LANGSMITH_PROJECT=credit-risk-assessment,LANGSMITH_TRACING_ENABLED=true,LOG_LEVEL=INFO,LOG_FORMAT=json'
+    waitFor: ['push']
+
+  # ---------------------------------------------------------------------------
+  # Step 5: Smoke Test
+  # ---------------------------------------------------------------------------
+  - name: 'gcr.io/cloud-builders/curl'
+    id: 'smoke-test'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        sleep 30
+        SERVICE_URL=$(gcloud run services describe credit-risk-api --region ${_REGION} --format 'value(status.url)')
+        curl -f "$${SERVICE_URL}/health" || exit 1
+        echo "Smoke test passed!"
+    waitFor: ['deploy']
+
+# =============================================================================
+# Substitution Variables
+# =============================================================================
+substitutions:
+  _REGION: 'europe-west1'
+
+# =============================================================================
+# Images to Store
+# =============================================================================
+images:
+  - 'gcr.io/$PROJECT_ID/credit-risk-api:$COMMIT_SHA'
+  - 'gcr.io/$PROJECT_ID/credit-risk-api:latest'
+
+# =============================================================================
+# Build Options
+# =============================================================================
+options:
+  machineType: 'E2_HIGHCPU_8'
+  logging: CLOUD_LOGGING_ONLY
+
+# =============================================================================
+# Timeout
+# =============================================================================
+timeout: '1800s'

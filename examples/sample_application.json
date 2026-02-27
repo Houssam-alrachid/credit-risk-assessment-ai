@@ -1,0 +1,81 @@
+{
+  "application": {
+    "application_id": "APP-2024-001",
+    "applicant": {
+      "first_name": "Marie",
+      "last_name": "Martin",
+      "date_of_birth": "1985-03-20",
+      "nationality": "FR",
+      "email": "marie.martin@email.com",
+      "phone": "+33612345678"
+    },
+    "employment": {
+      "employment_type": "employed",
+      "employer_name": "BNP Paribas",
+      "job_title": "Senior Financial Analyst",
+      "industry": "Banking & Finance",
+      "years_employed": 6.5,
+      "years_in_profession": 12.0,
+      "monthly_gross_income": 7500.00,
+      "monthly_net_income": 5625.00,
+      "additional_income": 500.00,
+      "income_verified": true
+    },
+    "existing_debts": [
+      {
+        "debt_type": "auto_loan",
+        "creditor_name": "Crédit Auto France",
+        "original_amount": 25000.00,
+        "current_balance": 12000.00,
+        "monthly_payment": 420.00,
+        "interest_rate": 4.5,
+        "remaining_months": 30,
+        "is_secured": true,
+        "payment_history": "excellent"
+      },
+      {
+        "debt_type": "credit_card",
+        "creditor_name": "Visa Premier",
+        "original_amount": 5000.00,
+        "current_balance": 1500.00,
+        "monthly_payment": 150.00,
+        "interest_rate": 18.0,
+        "remaining_months": 12,
+        "is_secured": false,
+        "payment_history": "good"
+      }
+    ],
+    "collateral": {
+      "collateral_type": "real_estate",
+      "description": "Appartement 3 pièces, 75m², Paris 15ème",
+      "estimated_value": 450000.00,
+      "valuation_date": "2024-01-15",
+      "valuation_source": "Expert immobilier agréé",
+      "encumbrances": 0.00,
+      "insurance_coverage": 450000.00
+    },
+    "loan_request": {
+      "loan_purpose": "mortgage",
+      "requested_amount": 320000.00,
+      "requested_term_months": 240,
+      "preferred_payment_day": 5,
+      "purpose_description": "Acquisition résidence principale - Appartement 4 pièces Paris 12ème"
+    },
+    "credit_history": {
+      "credit_score": 745,
+      "credit_score_source": "Banque de France",
+      "accounts_open": 4,
+      "accounts_closed": 2,
+      "oldest_account_years": 15.0,
+      "recent_inquiries": 1,
+      "delinquencies_30_days": 0,
+      "delinquencies_60_days": 0,
+      "delinquencies_90_days": 0,
+      "bankruptcies": 0,
+      "foreclosures": 0,
+      "collections": 0
+    }
+  },
+  "fast_mode": false,
+  "include_detailed_report": true
+}

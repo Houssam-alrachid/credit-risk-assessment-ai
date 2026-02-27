@@ -1,0 +1,83 @@
+# =============================================================================
+# Docker Compose - Credit Risk Assessment AI
+# =============================================================================
+# Local development and testing configuration
+# =============================================================================
+
+version: '3.8'
+
+services:
+  # ===========================================================================
+  # Backend API
+  # ===========================================================================
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: credit-risk-backend
+    ports:
+      - "8080:8080"
+    environment:
+      - APP_NAME=Credit Risk Assessment AI
+      - DEBUG=true
+      - API_HOST=0.0.0.0
+      - API_PORT=8080
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - OPENAI_MODEL=${OPENAI_MODEL:-gpt-4o-mini}
+      - OPENAI_TEMPERATURE=0.1
+      - LANGSMITH_API_KEY=${LANGSMITH_API_KEY:-}
+      - LANGSMITH_PROJECT=credit-risk-assessment
+      - LANGSMITH_TRACING_ENABLED=${LANGSMITH_TRACING_ENABLED:-false}
+      - LOG_LEVEL=INFO
+      - LOG_FORMAT=json
+      - PYTHONUNBUFFERED=1
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8080/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    restart: unless-stopped
+    networks:
+      - credit-risk-network
+
+  # ===========================================================================
+  # Frontend
+  # ===========================================================================
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: credit-risk-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+    networks:
+      - credit-risk-network
+
+networks:
+  credit-risk-network:
+    driver: bridge
+
+# =============================================================================
+# USAGE:
+# =============================================================================
+#
+# 1. Create .env file with:
+#    OPENAI_API_KEY=sk-your-key
+#    LANGSMITH_API_KEY=lsv2-your-key (optional)
+#
+# 2. Build and run:
+#    docker-compose up --build
+#
+# 3. Access:
+#    Frontend: http://localhost:3000
+#    API: http://localhost:8080
+#    Docs: http://localhost:8080/docs
+#
+# 4. Stop:
+#    docker-compose down
+#
+# =============================================================================
