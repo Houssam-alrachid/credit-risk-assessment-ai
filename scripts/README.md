@@ -1,70 +1,84 @@
 # Scripts Directory
 
-## 🚀 Server Management
+Essential automation scripts for development and deployment.
+
+---
+
+## 🚀 Development Scripts
 
 ### `start-all.bat`
-**Start both frontend and backend** in separate windows.
+**Start both frontend and backend** in separate terminal windows.
 ```bash
 scripts\start-all.bat
 ```
-This is the recommended way to start the application.
+- Backend: http://localhost:8080
+- Frontend: http://localhost:3000
+- **Recommended for local development**
 
 ### `start-backend.bat`
 **Start backend only** (FastAPI on port 8080).
 ```bash
 scripts\start-backend.bat
 ```
+Use when developing backend features or testing API endpoints.
 
 ### `start-frontend.bat`
 **Start frontend only** (React on port 3000).
 ```bash
 scripts\start-frontend.bat
 ```
+Use when developing UI features. Requires backend to be running separately.
 
 ---
 
-## 📦 Package Management
+## ☁️ Deployment Script
 
-### `add-package.bat`
-Add a Python package to the backend using UV.
+### `deploy-cloud-run.sh`
+Deploy the application to Google Cloud Run (Linux/Mac/WSL).
 ```bash
-scripts\add-package.bat <package-name>
-```
-
-### `remove-package.bat`
-Remove a Python package from the backend.
-```bash
-scripts\remove-package.bat <package-name>
-```
-
-### `setup-uv.bat`
-Install UV package manager.
-```bash
-scripts\setup-uv.bat
-```
-
----
-
-## ☁️ Deployment
-
-### `deploy-cloud-run.bat` / `deploy-cloud-run.sh`
-Deploy the application to Google Cloud Run.
-```bash
-# Windows
-scripts\deploy-cloud-run.bat
-
-# Linux/Mac
 ./scripts/deploy-cloud-run.sh
 ```
 
+**Prerequisites:**
+- Google Cloud SDK installed (`gcloud`)
+- Authenticated to GCP (`gcloud auth login`)
+- Project configured (`gcloud config set project PROJECT_ID`)
+- Required APIs enabled (Cloud Run, Container Registry, Cloud Build)
+
+**What it does:**
+1. Builds Docker images for backend and frontend
+2. Pushes images to Google Container Registry
+3. Deploys to Cloud Run
+4. Runs smoke tests
+
 ---
 
-## 📝 Usage Summary
+## 📝 Quick Reference
 
-**Most Common:**
-- `start-all.bat` - Start everything
-- `start-backend.bat` - Backend only
-- `start-frontend.bat` - Frontend only
+| Script | Purpose | When to Use |
+|--------|---------|-------------|
+| `start-all.bat` | Start full stack | Daily development |
+| `start-backend.bat` | Backend only | API development/testing |
+| `start-frontend.bat` | Frontend only | UI development |
+| `deploy-cloud-run.sh` | Deploy to GCP | Production deployment |
 
 **Stop Services:**
 - Press `Ctrl+C` in each terminal window
+
+---
+
+## 🔧 Package Management
+
+For Python package management, use UV directly:
+```bash
+# Add package
+uv add <package-name>
+
+# Remove package
+uv remove <package-name>
+
+# Sync dependencies
+uv sync
+```
+
+See `UV_GUIDE.md` in the root directory for more details.
