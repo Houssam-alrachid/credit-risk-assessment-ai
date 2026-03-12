@@ -28,6 +28,8 @@ from app.models import (
 from services.credit_assessment_service import credit_assessment_service
 from config.settings import settings
 from config.logging_config import get_logger
+from prometheus_client import generate_latest, CONTENT_TYPE_LATEST
+from fastapi.responses import Response
 
 logger = get_logger(__name__)
 
@@ -195,6 +197,21 @@ async def get_configuration():
             "max": settings.max_credit_score
         }
     }
+
+
+@app.get("/metrics", tags=["Monitoring"])
+async def metrics():
+    """
+    Prometheus metrics endpoint.
+    
+    Exposes metrics for:
+    - Workflow execution duration and status
+    - Individual node execution duration
+    - LLM token usage and latency
+    - Error rates by type and component
+    - Active workflow count
+    """
+    return Response(content=generate_latest(), media_type=CONTENT_TYPE_LATEST)
 
 
 if __name__ == "__main__":

@@ -30,15 +30,14 @@ if %errorlevel% neq 0 (
 )
 
 REM Sync dependencies
-if not exist ".venv" (
-    echo [INFO] Setting up virtual environment...
-    uv sync
-)
+echo [INFO] Syncing dependencies...
+uv sync
 
 echo.
 echo ============================================================
 echo    Backend starting on http://localhost:8080
 echo    API Docs: http://localhost:8080/docs
+echo    Metrics:  http://localhost:8080/metrics
 echo    Press Ctrl+C to stop
 echo ============================================================
 echo.

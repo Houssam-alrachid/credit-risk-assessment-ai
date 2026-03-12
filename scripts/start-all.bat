@@ -27,6 +27,7 @@ echo ============================================================
 echo.
 echo    Backend API:  http://localhost:8080
 echo    API Docs:     http://localhost:8080/docs
+echo    Metrics:      http://localhost:8080/metrics
 echo    Frontend:     http://localhost:3000
 echo.
 echo    Close the terminal windows to stop the services.

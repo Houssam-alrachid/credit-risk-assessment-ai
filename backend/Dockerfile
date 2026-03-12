@@ -30,6 +30,7 @@ COPY --chown=appuser:appuser agents/ ./agents/
 COPY --chown=appuser:appuser graphs/ ./graphs/
 COPY --chown=appuser:appuser services/ ./services/
 COPY --chown=appuser:appuser config/ ./config/
+COPY --chown=appuser:appuser monitoring/ ./monitoring/
 
 RUN chown -R appuser:appuser /app
 

@@ -58,7 +58,7 @@ class TextFormatter(logging.Formatter):
             datefmt="%Y-%m-%d %H:%M:%S"
         )
 
-
+# 1. Setup logging (called once at startup)
 def setup_logging() -> logging.Logger:
     """
     Configure application logging based on settings.
@@ -66,7 +66,7 @@ def setup_logging() -> logging.Logger:
     """
     # Get root logger
     logger = logging.getLogger("credit_risk")
-    logger.setLevel(getattr(logging, settings.log_level.upper()))
+    logger.setLevel(getattr(logging, settings.log_level.upper())) # INFO, DEBUG, WARNING, ERROR
     
     # Remove existing handlers
     logger.handlers.clear()
@@ -77,9 +77,9 @@ def setup_logging() -> logging.Logger:
     
     # Set formatter based on settings
     if settings.log_format.lower() == "json":
-        formatter = JSONFormatter()
+        formatter = JSONFormatter() # Production
     else:
-        formatter = TextFormatter()
+        formatter = TextFormatter() # Development
     
     console_handler.setFormatter(formatter)
     logger.addHandler(console_handler)
@@ -90,6 +90,7 @@ def setup_logging() -> logging.Logger:
     return logger
 
 
+# 2. Get logger in any module
 def get_logger(name: str) -> logging.Logger:
     """
     Get a child logger with the specified name.

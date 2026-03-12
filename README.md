@@ -53,21 +53,22 @@ This system automates the credit risk assessment process using 6 specialized AI 
 │  │   Endpoint   │    │ Orchestrator │    │   Tracing    │          │
 │  └──────────────┘    └──────────────┘    └──────────────┘          │
 │                             │                                        │
+│                             ▼                                        │
+│                    ┌─────────────┐                                   │
+│                    │  Financial  │                                   │
+│                    │    Data     │                                   │
+│                    │  Collector  │                                   │
+│                    └─────────────┘                                   │
+│                             │                                        │
 │         ┌───────────────────┼───────────────────┐                   │
 │         ▼                   ▼                   ▼                   │
 │  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐             │
-│  │  Financial  │    │   Income    │    │    Debt     │ PARALLEL    │
-│  │   Data      │    │  Analyzer   │    │  Analyzer   │ ANALYSIS    │
-│  │  Collector  │    │             │    │             │             │
+│  │   Income    │    │    Debt     │    │  Collateral │ PARALLEL    │
+│  │  Analyzer   │    │  Analyzer   │    │  Evaluator  │ EXECUTION   │
+│  │             │    │             │    │             │             │
 │  └─────────────┘    └─────────────┘    └─────────────┘             │
 │         │                   │                   │                   │
 │         └───────────────────┼───────────────────┘                   │
-│                             ▼                                        │
-│                    ┌─────────────┐                                   │
-│                    │  Collateral │                                   │
-│                    │  Evaluator  │                                   │
-│                    └─────────────┘                                   │
-│                             │                                        │
 │                             ▼                                        │
 │                    ┌─────────────┐                                   │
 │                    │    Risk     │                                   │
@@ -96,14 +97,19 @@ This system automates the credit risk assessment process using 6 specialized AI 
 
 - ✅ **Automated Credit Decisioning** - Approve, decline, or flag for manual review
 - ✅ **Risk Scoring** - PD/LGD/EL calculations with Basel III compliance
-- ✅ **DTI Analysis** - Debt-to-income and affordability assessment
+- ✅ **DTI Analysis** - Debt-to-income and affordability assessment (28%/43% rules)
 - ✅ **Collateral Evaluation** - LTV and liquidation value estimation
+- ✅ **Stress Testing** - Income reduction and interest rate scenarios
 - ✅ **Structured Reports** - Detailed credit memos with recommendations
 
 ### Technical Features
 
+- ✅ **Hybrid Calculation Architecture** - Python for math, LLM for qualitative analysis
+- ✅ **Deterministic Calculations** - Auditable financial formulas (DTI, LTV, PD, LGD, EL)
 - ✅ **LangGraph Orchestration** - Multi-agent workflow management
+- ✅ **Parallel Agent Execution** - Income, debt, and collateral analyzed simultaneously
 - ✅ **LangSmith Tracing** - Full observability and debugging
+- ✅ **Prometheus Metrics** - Comprehensive performance monitoring
 - ✅ **Streaming API** - Real-time progress updates via SSE
 - ✅ **Docker Ready** - Optimized multi-stage build
 - ✅ **Cloud Run Deployment** - Serverless, auto-scaling
@@ -123,6 +129,7 @@ This system automates the credit risk assessment process using 6 specialized AI 
 | `POST` | `/api/v1/assess/stream` | Assessment with SSE progress |
 | `POST` | `/api/v1/validate`      | Validate application         |
 | `GET`  | `/api/v1/config`        | Get configuration            |
+| `GET`  | `/metrics`              | Prometheus metrics           |
 
 ### Request Schema
 
@@ -201,6 +208,12 @@ credit-risk-assessment-ai/
 │   │   ├── collateral_evaluator.py
 │   │   ├── risk_scorer.py
 │   │   └── decision_writer.py
+│   ├── calculations/            # Financial calculation functions
+│   │   ├── __init__.py
+│   │   ├── income_calculations.py
+│   │   ├── debt_calculations.py
+│   │   ├── collateral_calculations.py
+│   │   └── risk_calculations.py
 │   ├── graphs/
 │   │   └── credit_assessment_graph.py  # LangGraph workflow
 │   ├── services/
@@ -208,6 +221,9 @@ credit-risk-assessment-ai/
 │   ├── config/
 │   │   ├── settings.py
 │   │   └── logging_config.py
+│   ├── monitoring/
+│   │   ├── __init__.py
+│   │   └── metrics.py              # Prometheus metrics
 │   ├── Dockerfile
 │   ├── pyproject.toml
 │   └── requirements.txt

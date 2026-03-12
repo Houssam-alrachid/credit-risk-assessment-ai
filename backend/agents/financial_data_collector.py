@@ -61,9 +61,9 @@ Provide a comprehensive financial data summary including:
 
 def get_financial_data_collector():
     """Get the Financial Data Collector agent chain."""
-    llm = get_llm()
-    structured_llm = llm.with_structured_output(FinancialDataSummary)
-    chain = financial_data_collector_prompt | structured_llm
-    return chain
+    llm = get_llm() # Get the LLM instance
+    structured_llm = llm.with_structured_output(FinancialDataSummary) # Configure structured output
+    chain = financial_data_collector_prompt | structured_llm # Create the chain : Prompt → LLM → Structured Output
+    return chain # the complete agent pipeline
 
 financial_data_collector = get_financial_data_collector()

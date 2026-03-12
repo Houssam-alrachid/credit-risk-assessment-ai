@@ -11,7 +11,7 @@ from typing import Type, Optional
 from config.settings import settings
 from config.logging_config import get_logger
 
-logger = get_logger(__name__)
+logger = get_logger(__name__) # Logger for the module 
 
 
 def get_llm(temperature: Optional[float] = None) -> ChatOpenAI:
@@ -45,14 +45,19 @@ def create_agent_prompt(
         include_history: Whether to include conversation history
         
     Returns:
-        Configured ChatPromptTemplate
+        Configured ChatPromptTemplate :
+        [
+            ("system", system_message),
+            MessagesPlaceholder("history"),
+            ("human", "{input}")
+        ]
     """
     messages = [("system", system_message)]
     
     if include_history:
         messages.append(MessagesPlaceholder(variable_name="history", optional=True))
     
-    messages.append(("human", "{input}"))
+    messages.append(("human", "{input}")) # input : the human question  
     
     return ChatPromptTemplate.from_messages(messages)
 
@@ -76,8 +81,10 @@ def create_structured_agent(
     llm = get_llm(temperature)
     prompt = create_agent_prompt(system_message)
     
+    # Enabling structured output 
     structured_llm = llm.with_structured_output(output_model)
     
+    # |: LangChain pipeline.
     chain = prompt | structured_llm
     
     return chain

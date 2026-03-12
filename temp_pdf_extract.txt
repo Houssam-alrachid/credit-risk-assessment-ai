@@ -1,0 +1,590 @@
+
+=== PAGE 1 ===
+Data 
+For Business 
+1Compétences principales. 
+Intelligence Artiﬁcielle & Data 
+LLMs, Transformers, IA générative, RAG, Prompt engineering 
+Machine Learning, Deep Learning, NLP 
+OpenAI Agents SDK, Architecture Multi-Agent Systems 
+Agent Frameworks (LangGraph, CrewAI, AutoGen), MCP 
+GCP, Azure, Databricks, DataIku 
+Gestion de projet & Leadership technique 
+Déﬁnition de roadmaps IA & cadrage technique 
+Analyse des besoins techniques / fonctionnels 
+Suivi de delivery, pilotage technique, coordination multi-équipes 
+Architecture cloud-native et gouvernance IA 
+Outils & Langages 
+Python, SQL, Git, Azure DevOps, FastAPI, Flask, Docker, K8s, CI/CD 
+Projet interne. 
+ Lead AI Engineer 
+Devoteam 
+Conception & industrialisation de systèmes multi-agents 
+GenAI
+Depuis 01/2026 
+Mission interne de R&D centrée sur la conception, l’implémentation et 
+l’industrialisation de systèmes multi-agents GenAI en environnement cloud 
+sécurisé. Le projet consiste à concevoir une plateforme d’analyse automatisée 
+d'investissements basée sur des agents spécialisés, avec un fort focus sur 
+l’architecture agentique, la standardisation des interactions, la sécurité, la mise 
+en production sur GCP et la reproductibilité des environnements. Responsable 
+de l’architecture end-to-end, des choix techniques, de l’industrialisation et des 
+bonnes pratiques de développement pour agents en production. 
+Travaux réalisés : 
+●Contexte métier : Conception d’une plateforme d’analyse automatisée 
+reposant sur un système multi-agents spécialisés (Planner, Search, Financial 
+Analyst, Competitive Analyst, Risk Analyst, Writer, Email), permettant de 
+structurer et d’orchestrer des tâches complexes via une architecture 
+agentique modulaire. 
+●Implémentation technique :  
+○ Développement du système multi-agents avec OpenAI Agents SDK et 
+LLM 
+○ Déﬁnition d’une architecture d’orchestration hybride (patterns 
+séquentiels et parallèles) aﬁn d’optimiser performance, robustesse et 
+qualité des sorties 
+○ Structuration claire des rôles agents et des patterns d’orchestration 
+○ Architecture backend FastAPI avec endpoints REST et streaming SSE 
+○ Intégration du protocole MCP pour standardiser les interactions 
+agents–outils 
+●Mise en production et industrialisation : 
+○ Containerisation complète avec Docker et Docker Compose 
+○ Déploiement en production sur Cloud Run avec gestion de l’auto-scaling 
+○ Gestion des secrets via Google Cloud Secret Manager 
+○ Mise en place d’un pipeline CI/CD avec Cloud Build 
+○ Gestion des environnements et reproductibilité des déploiements 
+●Résultats :  
+○ Réduction signiﬁcative du temps d’analyse (10–15 minutes vs 2–4 
+semaines en méthode traditionnelle) 
+○ Architecture reproductible, sécurisée et prête à être réutilisée pour 
+d’autres cas d’usage 
+Compétences métiers : 
+●GenAI & Multi-Agent Systems :  LLM (OpenAI GPT-4o), OpenAI Agents 
+SDK, prompt engineering, orchestration multi-agents, MCP, frameworks 
+agentiques (LangGraph, CrewAI, AutoGen) 
+●Architecture : Multi-Agent Systems, API design (FastAPI), streaming SSE 
+●Sécurité :  gestion des secrets, principe de moindre privilège 
+●Cloud & DevOps : GCP (Cloud Run, Cloud Build, Secret Manager), Docker, 
+CI/CD HAL Lead Data science 
+Project manager 
+Expert IA 
+Diplômes & Certiﬁcations. 
+courant Langues.
+bilingue 
+Français Anglais 
+Diplôme 
+Doctorat en mathématiques 
+appliquées 
+École des Ponts ParisTech 
+2012 - 2015 
+Certiﬁcations 
+SAFe Product Owner / Product 
+Manager 
+Google Generative AI Leader 
+Google Cloud Professional Data 
+Engineer 
+Dataiku Core Designer 
+Dataiku Machine Learning 
+Practitioner 
+Multi-certiﬁé cursus IBM Data 
+Science avancé 
+
+=== PAGE 2 ===
+Data 
+For Business 
+2
+Lead Data science 
+Project manager 
+Expert IA 
+HAL Tech Lead AI 
+MGEN
+Conception & industrialisation d’un assistant IA (RAG) – 
+SharePoint 
+05/2025 - 12/2025 
+MGEN a souhaité concevoir et mettre en production un assistant conversationnel 
+sécurisé permettant de réduire le temps de recherche documentaire, d’augmenter 
+la productivité, tout en respectant strictement les contraintes RGPD, sécurité et les 
+droits d’accès utilisateurs en temps réel. Le projet consistait à déployer une 
+solution IA agentique intégrée dans une plateforme SecureGPT, reposant sur un 
+RAG robuste et scalable, conforme aux standards de production : SSO, gestion ﬁne 
+des accès, principe du moindre privilège, auditabilité, traçabilité et gouvernance 
+des données. Le tout industrialisé sur GCP, avec une forte exigence de ﬁabilité et 
+d’expérience utilisateur ﬂuide, notamment via le streaming des réponses. En tant 
+que Tech Lead IA, j’étais responsable de l’architecture, des choix techniques, de la 
+roadmap produit et du delivery. J’encadrais une équipe pluridisciplinaire 
+composée de deux ingénieurs IA, un développeur full-stack, un data engineer et 
+un MLOps engineer. 
+Travaux réalisés : 
+1. Conception et industrialisation d’un assistant IA RAG SharePoint sécurisé 
+●Contexte métier : Besoin d’améliorer l’accès à la documentation interne aﬁn 
+de réduire le temps de recherche des collaborateurs et d’accroître leur 
+productivité de manière sécurisée, tout en garantissant la conformité RGPD et 
+le respect strict des permissions SharePoint en temps réel.  
+●Cadrage métier : Alignement avec les équipes sécurité, IT et métier pour 
+garantir la conformité aux contraintes d’authentiﬁcation, de gouvernance et 
+d’usage du cloud. Déﬁnition des roadmaps IA et les attendus par livraison. 
+●Implémentation technique :  
+○ Conception et développement d’un assistant RAG sur GCP s’appuyant sur 
+un agent LangGraph, des LLM via Vertex AI et un stockage 
+PostgreSQL/PGVector 
+○ Mise en œuvre d’un pipeline d’ingestion depuis SharePoint : extraction via 
+Microsoft Graph API, parsing multi-formats, nettoyage, chunking 
+sémantique et embeddings conﬁgurables 
+○ Intégration d’un double SSO (ForgeRock + Azure AD/Entra ID OAuth2) et 
+application dynamique des ACL lors des requêtes RAG 
+○ Implémentation d’un agent conversationnel multi-nœuds 
+(Router/RAG/Conversation/Image/Summarize) avec checkpointing 
+PostgreSQL et streaming SSE côté UX 
+●Mise en production : 
+○ Passage d’une synchronisation manuelle à une automatisation via Cloud 
+Scheduler avec détection de changements (checksum + last_modiﬁed) 
+○ Déploiement sur Cloud Run et mise en place du monitoring 
+○ Réalisation de tests fonctionnels multi-formats, tests de charge et tests de 
+sécurité ACL 
+○ Suivi d’indicateurs et observabilité 
+●Documentation : Production d’une documentation technique et 
+fonctionnelle (architecture, API, guide utilisateur, runbooks, gouvernance 
+et rétention). 
+●Résultats : 
+○ Mise en production d’un assistant RAG SharePoint sécurisé et robuste, 
+améliorant l’accès à l’information et la productivité 
+○ Conformité stricte aux droits SharePoint via approche Zero Trust (ACL 
+multi-niveaux, tokens individuels) 
+○ Architecture uniﬁée et scalable, prête à accueillir de nouvelles sources via 
+le pattern Connector, avec intégration des retours métiers pour améliorer 
+la pertinence. 
+
+=== PAGE 3 ===
+Data 
+For Business 
+3
+2. Leadership technique et gestion de produit : 
+● Piloter les décisions d’architecture (RAG, LangGraph, agent 
+multi-nœuds, PGVector, sécurité SSO) et arbitrer les trade-offs 
+(latence vs recall, sécurité vs UX, coût vs scalabilité) 
+● Structurer le delivery (roadmap POC→MVP→Prod, jalons, 
+dépendances SSI/infra) et garantir l’alignement des parties 
+prenantes (métiers, sécurité, plateforme, direction). 
+● Encadrer une équipe pluridisciplinaire (eng IA/fullstack/data 
+eng/MLOPS) 
+● Industrialiser les pratiques : documentation “run”, checklist 
+déploiement, rétro-compatibilité, stratégie de dépréciation, 
+transfert de connaissance. 
+● Gouverner les données : classiﬁcation, conformité d’accès, 
+auditabilité, politique de rétention et RGPD. 
+Compétences métiers : 
+●GenAI & RAG :  LLM (Vertex AI Gemini), prompt engineering, 
+retrieval vectoriel, grounding, embeddings multi-providers 
+●Architecture : LangGraph/LangChain (multi-nœuds, 
+checkpointing), pattern Connector, Microsoft Graph API, API 
+design (FastAPI, REST, SSE) 
+●Sécurité & IAM :  OAuth2/OIDC, Azure AD/Entra ID, moindre 
+privilège, ACL ﬁltering multi-niveaux, Zero Trust 
+●Cloud & Data : GCP (Cloud Run, GKE, Cloud Scheduler, GCS), 
+PostgreSQL/PGVector, pipelines d’ingestion (parsing, chunking, 
+vectorisation) 
+●Delivery : Product ownership, cadrage, agile (Scrum/Kanban), 
+stakeholder & change management 
+●Qualité : tests unitaires/fonctionnels/charge/sécurité, observabilité 
+(métriques, logs structurés, monitoring), documentation 
+(technique, fonctionnelle, opérationnelle) 
+Lead Data science 
+Project manager 
+Expert IA 
+HAL 
+=== PAGE 4 ===
+Data 
+For Business 
+4Lead Data Scientist 
+AXA France 
+Conception et industrialisation de moteurs IA 
+07/2022 - 04/2025 
+En tant que Lead Data Scientist et Product Owner chez AXA France, j’ai piloté la 
+conception, le développement et l’industrialisation de plusieurs solutions d’IA à 
+fort impact métier : un moteur de classiﬁcation et de routage automatique des 
+e-mails sinistres, un système d’indexation intelligente des documents entrants, 
+un RAG basé sur un LLM pour les agents d’assurance, ainsi qu’une solution de 
+détection automatisée des dérives de données en production. J’ai déﬁni les 
+roadmaps IA avec estimation des gains par livraison, encadré une équipe 
+technique (2 DS, 2 MLE), organisé les rituels agiles, et vulgarisé les résultats 
+auprès des métiers. J’ai également accompagné la généralisation des solutions 
+IA à d'autres entités : cadrage de POCs, estimation des charges, choix 
+d’architecture technique, évaluation des coûts et des proﬁls nécessaires. 
+Travaux réalisés : 
+1. Développement d'un moteur d'IA pour la classiﬁcation et le routage 
+automatique des e-mails sinistres : 
+●Contexte métier : Les équipes sinistres recevaient chaque jour plusieurs 
+milliers d’e-mails, nécessitant un tri manuel fastidieux, source de délais et 
+d’erreurs. 
+●Cadrage métier : Identiﬁcation des besoins avec les équipes sinistres ; 
+déﬁnition et pilotage des roadmaps IA avec estimation des gains métiers 
+attendus pour chaque livraison. 
+●Implémentation technique :  Développement d'un moteur d'IA sur Azure 
+ML combinant OCR, NLP, TF-IDF, Deep Learning et optimisation sous 
+contrainte, entraîné sur 700 000 e-mails annotés. 
+●Mise en production  avec revue de code, tests unitaires, MLOps, supervision 
+en production sur plus de 10 000 emails par jour. 
+●Documentation technique et fonctionnelle vulgarisée. 
+●Résultats : Atteinte de l'objectif métier global avec un taux 
+d'automatisation de 80 % du routage, représentant un gain estimé de 1 ETP 
+par point gagné. 
+2. Automatisation de l’indexation des documents entrants : 
+●Contexte métier : L’indexation manuelle des documents GED (PDFs, 
+courriers…) ralentissait les traitements et générait des erreurs. 
+●Cadrage métier : Analyse des workﬂows documentaires et besoin de 
+ﬁabiliser l'indexation manuelle. 
+●Implémentation technique :  Développement d'un moteur combinant OCR, 
+NLP, Machine Learning et Computer vision (VIT). 
+●Mise en production avec revue de code, tests unitaires, MLOps, supervision 
+en production sur plus de 7 000 documents par jour. 
+●Résultats : Automatisation de l'indexation de 70 % des documents entrants. 
+3. Développement d’un RAG pour les agents d’assurance : 
+●Contexte métier : Les agents avaient des difﬁcultés à trouver 
+rapidement les bonnes réponses dans une base documentaire 
+complexe (procédures, produits, réglementations). 
+●Implémentation technique :  Développement d’un RAG basé sur 
+LangChain, OpenAI (GPT-4.o) et une base vectorielle ElasticSearch. 
+●Évaluation :  Construction d’une base de tests métiers (Q/R réelles) 
+fournie par les équipes fonctionnelles pour évaluer la couverture et la 
+pertinence des réponses; Recueil de feedbacks utilisateurs. 
+●Résultats : Accélération du temps de réponse des agents, réduction des 
+sollicitations aux équipes support de niveau 1, montée en compétence 
+des utilisateurs sur les sujets complexes grâce à un accès autonome à la 
+documentation métier. 
+Lead Data science 
+Project manager 
+Expert IA 
+HAL 
+=== PAGE 5 ===
+Data 
+For Business 
+54. Développement d'un système de détection de dérives de données 
+en production : 
+●Cadrage métier : Les modèles IA en production perdaient parfois 
+en performance sans alerte, faute de détection proactive des data 
+drift. 
+●Implémentation technique :  Mise en place de KPIs de 
+monitoring, détection automatique des dérives via Evidently, 
+alerting intégré au pipeline. 
+●Résultats : Réduction des incidents liés à la dégradation des 
+modèles, amélioration de la stabilité des performances. 
+5. Rôle de Product Owner (PO) : 
+● Déﬁnition et pilotage des roadmaps IA avec estimation des gains 
+métiers attendus pour chaque livraison. 
+● Cadrage des cas d’usage avec les métiers (POC, chiffrages, besoins 
+infra et proﬁls). 
+● Organisation des rituels agiles Scrum (sprint planning, démos, 
+rétrospectives, Kanban). 
+● Revue de code, validation des livrables et des choix techniques. 
+● Communication continue avec les équipes métiers, avec des 
+présentations claires, pédagogiques et non techniques des 
+résultats et choix algorithmiques. 
+● Suivi de l’adoption métier, formation des utilisateurs, 
+documentation vulgarisée. 
+● Animation d’un réseau de data scientists internes, capitalisation 
+des bonnes pratiques IA et MLOps. 
+Compétences métiers : 
+Machine Learning / Deep Learning, NLP, LLM, RAG, LangChain, Azure ML, 
+Azure DevOps, Python, CI/CD, MLOps, Détection de data drift, 
+Vectorisation de documents, Revue de code, Tests unitaires, Méthodologie 
+agile (Scrum, Kanban), Roadmap IA, Cadrage fonctionnel, Encadrement d’
+équipe (data scientists, MLE), Cadrage et pilotage de POCs 
+Lead Data science 
+Project manager 
+Expert IA 
+HAL 
+=== PAGE 6 ===
+Data 
+For Business 
+6Lead Data Scientist 
+Nespresso Spain 
+Ingénierie de données sur Google Cloud Platform 
+01/2022 - 07/2022 
+J'ai travaillé chez Nespresso en tant que Lead Data Scientist pour 
+accompagner les équipes dans l’adoption de l’IA à travers la montée en 
+compétence en NLP, Deep Learning, Transformers, LLM et IA générative. 
+J’ai développé un modèle de prédiction des abonnements mensuels 
+payants basé sur le Temporal Fusion Transformer, améliorant la précision 
+des prévisions sur les séries temporelles. J’ai également conçu une 
+segmentation avancée de la clientèle avec Sentence-Transformer, 
+optimisant les stratégies marketing et la personnalisation des offres. En 
+parallèle, j’ai mis en place une analyse de sentiment en utilisant BERT et 
+GPT pour extraire des insights pertinents à partir des retours clients, 
+renforçant ainsi la satisfaction et la prise de décision stratégique. 
+Travaux réalisés : 
+● Formation et coaching sur NLP, Deep Learning, Transformers, LLM et 
+IA générative, pour une meilleure compréhension et une application 
+pratique dans le domaine. 
+● Développement d'un modèle de prédiction des abonnements 
+mensuels payants à l'aide du Temporal Fusion Transformer (avec 
+optimisation sous contrainte), améliorant la précision et la 
+performance des prédictions grâce à l'analyse de séries temporelles 
+● Optimisation sous contrainte des modèles de séries temporelles pour 
+ajuster dynamiquement l’assortiment des offres en fonction des 
+tendances de consommation et des contraintes opérationnelles. 
+● Mise en place d'une segmentation clientèle avancée en utilisant le 
+Sentence-Transformer, renforçant les stratégies de marketing ciblé et 
+facilitant une meilleure personnalisation des offres. 
+● Analyse de sentiment basée sur des modèles BERT et GPT, pour 
+extraire des insights pertinents à partir des retours clients, facilitant 
+une prise de décision informée et renforçant la satisfaction client. 
+Compétences métiers : 
+Machine Learning / Deep Learning, Gestion de données, Intelligence 
+artiﬁcielle, NLP et LLM, Gen AI, Python, SQL, Time series 
+Lead Data science 
+Project manager 
+Expert IA 
+HAL 
+=== PAGE 7 ===
+Data 
+For Business 
+7Data Engineer sur GCP 
+L’Oréal
+Ingénierie de données sur Google Cloud Platform 
+01/2022 - 07/2022 
+J’ai développé des pipelines d’ingestion, de traitement et d’organisation de 
+données provenant de sources variées (APIs, ﬁchiers Excel, images, vidéos), 
+optimisant ainsi les processus de traitement et l’extraction d’informations 
+clés. J’ai également déployé des modèles de machine learning sur 
+VertexAI, automatisant certaines tâches et générant des insights 
+pertinents pour les utilisateurs. Mon travail inclut aussi l’évaluation des 
+performances et l’extraction d’informations à partir d’APIs d’analyse 
+d’images et de vidéos, telles que Google Cloud Vision et les APIs L’Oréal, 
+permettant d’enrichir les modèles et d’améliorer la qualité des analyses. 
+Par ailleurs, j’ai intégré diverses APIs complémentaires pour renforcer les 
+fonctionnalités des outils de traitement de données. 
+Travaux réalisés : 
+● Développement de pipelines pour l'ingestion, le traitement et 
+l'organisation de données issues d'API, d'Excel, d'images et de vidéos, 
+améliorant les processus de traitement et extrayant des informations 
+pertinentes. 
+● Optimisation des pipelines de données sur BigQuery, avec requêtage 
+avancé et calcul distribué pour traiter de larges volumes de données 
+produits. 
+● Déploiement de modèles machine learning sur VertexAI, 
+automatisant des processus et générant des insights pertinents. 
+● Évaluation des performances et extraction d'informations à partir 
+d'APIs d'analyse d'images et de vidéos, comme Google Cloud Vision 
+et les APIs L'Oréal. 
+● Intégration d'autres APIs pour enrichir les fonctionnalités et accroître 
+la portée des outils de traitement de données. 
+● Conﬁguration d'environnements virtuels sur les instances et 
+conﬁguration des instances pour faciliter l'interaction avec Github, 
+optimisant les processus de développement. 
+Compétences métiers : 
+Machine Learning, Gestion de données, Intelligence artiﬁcielle, GCP 
+(BigQuery, VertexAI), Gestion des APIs, Swagger, Git, Python, SQL, NLP 
+Lead Data science 
+Project manager 
+Expert IA 
+HAL 
+=== PAGE 8 ===
+Data 
+For Business 
+8Data Scientist 
+Ysance
+Projets internes 
+10/2021 - 12/2021 
+Durant ces 3 mois, j'ai travaillé sur des projets internes de Data Science. Ce 
+travail s'est concentré sur des données non structurées telles que du texte, 
+des photos et des vidéos. L'objectif était d'optimiser et d'implémenter des 
+modèles Transformers pour les prédictions sur des données textuelles 
+avec une application de traduction automatique. De plus, l'objectif du 
+deuxième projet était de développer un modèle de Deep Learning 
+permettant d'appliquer l'IA DeepFake sur des photos et des vidéos. Enﬁn, 
+nous devions déployer tous ces modèles sur GCP. Les déﬁs rencontrés 
+reposent principalement sur l'optimisation des algorithmes aﬁn d'obtenir 
+de meilleures performances avec un coût de calcul raisonnable. 
+Travaux réalisés : 
+● Recherche et développement d'algorithmes Transformers (BERT, GPT, 
+CamemBERT, FlauBERT) pour le traitement du langage naturel (NLP), 
+visant à améliorer les performances et rendant les modèles plus 
+adaptables et accessibles aux utilisateurs. 
+● Recherche et développement d'algorithmes DeepFake sur des vidéos 
+et des photos, dans le but de détecter et d'authentiﬁer la provenance 
+des médias numériques. 
+● Déploiement d'algorithmes sur la Google Cloud Platform, assurant 
+une scalabilité et une ﬁabilité élevées. 
+● Data engineering sur la Google Cloud Platform, en utilisant des outils 
+comme BigQuery et Dataﬂow pour extraire, transformer et charger 
+des données, facilitant l'analyse et les décisions d'affaires. 
+● Veille technologique et étude de l'état de l'art pour rester à la pointe 
+des avancées dans les domaines de la machine learning, de 
+l'intelligence artiﬁcielle et des technologies cloud. 
+Compétences métiers : 
+Machine Learning, Intelligence artiﬁcielle, Google Cloud Platform, Git, 
+Python, SQL 
+Lead Data science 
+Project manager 
+Expert IA 
+HAL 
+=== PAGE 9 ===
+Data 
+For Business 
+9Senior Data Scientist 
+Auditex
+Valorisation de la R&D pour les projets de data 
+science
+06/2019 - 09/2021 
+J’interviens sur l’ensemble du cycle de vie des projets en data science et IA, 
+de l’audit des compétences métier à la mise en œuvre et au déploiement 
+de solutions. J’analyse les besoins techniques et ﬁnanciers, tout en 
+assurant une veille stratégique pour intégrer les dernières avancées du 
+domaine. J’ai appliqué des techniques de machine learning, deep learning 
+et NLP à divers cas d’usage, tels que la détection de fraudes, l’analyse 
+d’anomalies, la classiﬁcation des compétences, la prédiction de revenus 
+publicitaires et des résultats de paris sportifs. Enﬁn, je déploie ces solutions 
+sur Docker et Kubernetes dans des environnements Flask et GCP, 
+garantissant scalabilité et efﬁcacité. 
+Travaux réalisés : 
+● Conduite d'un audit des compétences métier pour aligner les 
+compétences internes avec les exigences évoluantes du marché. 
+● Analyse et recueil des besoins techniques et ﬁnanciers sous-jacents à 
+chaque projet, aﬁn d'optimiser les solutions. 
+● Veille stratégique sur les avancées technologiques dans le domaine 
+de l'intelligence artiﬁcielle et des données, aﬁn de rester à la pointe 
+du progrès. 
+● Mise en œuvre de projets data science, englobant la compréhension 
+des besoins métiers, l'ingénierie des données, la modélisation avec 
+des techniques de machine learning, deep learning et NLP, 
+l'évaluation des modèles et le déploiement dans des environnements 
+réels. 
+● Application de ces techniques pour résoudre un ensemble varié de 
+problèmes réels, tels que la prédiction d'emplacement pour un 
+restaurant, la détection de fraudes bancaires, l'analyse des anomalies 
+dans les données, la classiﬁcation multi-label des compétences d'un 
+métier, la prédiction des revenus provenant de la visualisation de 
+vidéos sur des pages web, la prédiction du métier d'un candidat à 
+partir de ses compétences, et la prédiction du gagnant sur les paris 
+sportifs de tennis. 
+● Déploiement de solutions sur Docker et Kubernetes dans des 
+environnements Flask et GCP pour accroître l'efﬁcacité et la 
+scalabilité des systèmes de production. 
+Compétences métiers : 
+Machine Learning, Gestion de données, Intelligence artiﬁcielle, Google 
+Cloud Platform, Kubernetes, Flask, Git, Python, SQL, NLP 
+Lead Data science 
+Project manager 
+Expert IA 
+HAL 
+=== PAGE 10 ===
+Data 
+For Business 
+10Ingénieur Machine Learning 
+CEA
+Prédiction des anomalies dans les matériaux 
+06/2018 - 05/2019 
+J’ai développé et optimisé des modèles de Machine Learning tels que 
+l'Inversion bayésienne, le Nested Sampling et les algorithmes MCMC 
+(Metropolis Hastings et Adaptive Metropolis Hastings) pour améliorer la 
+détection de défauts dans les matériaux. J’ai optimisé la performance et la 
+scalabilité des modèles en migrant de Matlab à Python, tout en collectant 
+des données expérimentales sur les ﬁssures via des tests d’inspection par 
+ultrasons. Le prétraitement et l’enrichissement des ensembles de données 
+ont permis d’améliorer la qualité des modèles, validés par la prédiction et 
+la comparaison des temps de calcul avec des approches traditionnelles, 
+démontrant une nette amélioration des performances. Enﬁn, j’ai partagé 
+ces avancées lors de conférences nationales et internationales, 
+contribuant à l’adoption de ces technologies dans divers domaines. 
+Travaux réalisés : 
+● Développement et optimisation de modèles Machine Learning, tels 
+que l'Inversion bayésienne, Nested Sampling, MCMC (Metropolis 
+Hastings et Adaptive Metropolis Hastings), pour améliorer la 
+détection de défauts dans des matériaux. 
+● Optimisation de la performance et la scalabilité des modèles en 
+passant du Matlab à Python. 
+● Collecte de données sur les défauts de type ﬁssure à travers 
+l'exécution d'expérimentations et l'analyse des résultats par tests 
+d'inspection par ultrasons. 
+● Prétraitement des données pour l'enrichissement des ensembles de 
+données existants, améliorant ainsi la qualité des modèles. 
+● Validation des modèles par la prédiction et la comparaison des temps 
+de calcul avec les modèles traditionnels, démontrant une 
+amélioration signiﬁcative dans la détection de défauts. 
+● Participation à des conférences nationales et internationales pour 
+partager les progrès dans le développement de modèles Machine 
+Learning pour la détection de défauts, afﬁnant la compréhension et 
+l'adoption de ces technologies dans divers domaines. 
+Compétences métiers : 
+Machine Learning, Gestion de données, Intelligence artiﬁcielle, Git, Python, 
+Matlab, SQL 
+Lead Data science 
+Project manager 
+Expert IA 
+HAL 
+=== PAGE 11 ===
+Data 
+For Business 
+11Doctorat en Machine Learning 
+Université d’Orléans 
+Prédiction des paramètres de modèles de croissance 
+des plantes 
+09/2016 - 03/2018 
+J’ai mené des analyses statistiques et analytiques pour améliorer les 
+modèles de croissance des plantes, optimisant ainsi l’efﬁcacité 
+opérationnelle. J’ai également géré des données en temps réel, intégrant 
+des informations dynamiques dans les décisions stratégiques. Dans ce 
+cadre, j’ai développé un algorithme de machine learning combinant des 
+techniques avancées telles que Bayes, Hidden Markov Chain, Metropolis 
+Hastings, Adaptive Metropolis Hastings et entropie pour afﬁner la 
+modélisation. Enﬁn, j’ai conçu et déployé une librairie pour le logiciel R, 
+facilitant l’évaluation et la validation des modèles, contribuant ainsi à une 
+meilleure prise de décision et planiﬁcation stratégique. 
+Travaux réalisés : 
+● Réalisation d'analyses statistiques et analytiques pour identiﬁer des 
+pistes d'amélioration des modèles de croissance des plantes, menant 
+à une augmentation de l'efﬁcacité opérationnelle. 
+● Gestion de données en temps réel, intégrant des informations 
+dynamiques dans les décisions stratégiques et opérationnelles. 
+● Développement d'un algorithme machine learning intégrant des 
+techniques de Bayes, Hidden Markov Chain, Metropolis Hastings, 
+Adaptive Metropolis Hastings et entropie, visant à optimiser les 
+modèles de croissance. 
+● Développement et déploiment d'une librairie pour le logiciel R, 
+facilitant l'évaluation et la validation des modèles, renforçant la prise 
+de décision et la planiﬁcation stratégique. 
+Compétences métiers : 
+Machine Learning, Gestion de données, Intelligence artiﬁcielle, HPC, SVN, 
+Git, R, Matlab, Time series 
+Lead Data science 
+Project manager 
+Expert IA 
+HAL 
+=== PAGE 12 ===
+Data 
+For Business 
+12Doctorat en Machine Learning 
+Université Paris Est 
+Prédiction des anomalies 
+09/2015 - 08/2016 
+J’effectue des tests statistiques pour analyser les données et évaluer la 
+ﬁabilité des modèles, optimisant ainsi leurs performances. J’ai conçu et 
+optimisé des algorithmes de Machine Learning et MCMC, tels que le 
+Processus Gaussien, Random Forest, Langevin, Metropolis Hastings et 
+Hidden Markov, pour résoudre des problématiques complexes. J’ai 
+également développé un modèle basé sur le Processus Gaussien aﬁn de 
+prédire la défaillance du système de freinage d’un avion lors de 
+l’atterrissage, améliorant ainsi la sécurité aérienne. Par ailleurs, je participe 
+régulièrement à des conférences nationales et internationales pour 
+partager mes recherches et contribuer à l’avancement des sciences des 
+données. 
+Travaux réalisés : 
+● Réalisation de tests statistiques pour analyser les données et évaluer 
+la ﬁabilité et la validité des modèles employés, améliorant ainsi leurs 
+performances. 
+● Conception des algorithmes Machine Learning et MCMC optimisés, 
+tels que le Processus Gaussien, Random Forest, Langevin, Metropolis 
+Hastings et Hidden Markov, pour résoudre des problèmes complexes. 
+● Développement d'un algorithme Machine Learning basé sur le 
+Processus Gaussien pour prédire la défaillance du système de 
+freinage d'un avion pendant son atterrissage, augmentant ainsi la 
+sécurité des opérations aériennes. 
+● Participation à des conférences nationales et internationales pour 
+partager les connaissances et les avancées dans le domaine des 
+sciences des données, renforçant ainsi la communauté de recherche 
+dans ce domaine. 
+Compétences métiers : 
+Machine Learning, HPC, SVN, Git, C++, Matlab 
+Lead Data science 
+Project manager 
+Expert IA 
+HAL 

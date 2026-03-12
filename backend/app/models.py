@@ -1,5 +1,5 @@
 """
-Pydantic Models for Credit Risk Assessment
+Pydantic Models (request/response schemas) for Credit Risk Assessment
 Structured data models for loan applications, analysis, and reports
 """
 
@@ -10,7 +10,7 @@ from enum import Enum
 
 
 # ============================================================================
-# ENUMS
+# ENUMS : Defines a fixed set of constant values (a closed domain).
 # ============================================================================
 
 class EmploymentType(str, Enum):
@@ -70,7 +70,7 @@ class ApplicantInfo(BaseModel):
     email: Optional[str] = Field(default=None)
     phone: Optional[str] = Field(default=None)
 
-    @field_validator("date_of_birth")
+    @field_validator("date_of_birth") # It tells Pydantic: When validating the field "date_of_birth", call the following function.
     @classmethod
     def validate_age(cls, v: date) -> date:
         today = date.today()
@@ -210,14 +210,16 @@ class RiskScoreBreakdown(BaseModel):
     collateral_score: float = Field(ge=0, le=100)
     employment_score: float = Field(ge=0, le=100)
 
+
+    # Calculate the weighted total of the risk score breakdown
     @property
     def weighted_total(self) -> float:
         weights = {
-            "credit_history": 0.30,
-            "income_stability": 0.25,
-            "debt_burden": 0.25,
-            "collateral": 0.10,
-            "employment": 0.10
+            "credit_history": 0.30, # 30% of the total risk score
+            "income_stability": 0.25, # 25% of the total risk score
+            "debt_burden": 0.25, # 25% of the total risk score
+            "collateral": 0.10, # 10% of the total risk score
+            "employment": 0.10 # 10% of the total risk score
         }
         return (
             self.credit_history_score * weights["credit_history"] +

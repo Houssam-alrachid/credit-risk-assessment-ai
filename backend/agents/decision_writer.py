@@ -57,21 +57,15 @@ DECLINED (confidence > 60% for decline):
 - Unverifiable income
 - Multiple severe red flags
 
-LOAN TERMS CALCULATION (if approved):
-1. Base rate: Determined by credit score tier
-2. Risk adjustment: +0.5% per risk level above LOW
-3. Term: As requested or adjusted based on risk
-4. Amount: As requested or reduced based on capacity
+LOAN TERMS GUIDELINES (if approved):
+- Interest rate based on credit score tier and risk level
+- Term as requested or adjusted based on risk assessment
+- Amount as requested or reduced based on payment capacity
+- Monthly payment must align with affordability analysis
 
-INTEREST RATE TIERS (base rates):
-- Excellent (750+): Prime + 0.5%
-- Good (700-749): Prime + 1.5%
-- Fair (650-699): Prime + 3%
-- Below Fair (580-649): Prime + 5%
-
-MONTHLY PAYMENT CALCULATION:
-P = [r*PV] / [1 - (1+r)^-n]
-Where: r = monthly rate, PV = loan amount, n = term in months
+NOTE: Loan terms (interest rate, monthly payment) will be provided 
+pre-calculated based on the applicant's credit profile and risk assessment.
+Focus on determining the appropriate decision type and conditions.
 
 Output your decision in the required structured format with full justification.
 """

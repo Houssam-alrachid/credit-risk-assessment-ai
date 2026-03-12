@@ -1,6 +1,7 @@
 """
 Application Settings
 Centralized configuration management using Pydantic Settings
+It loads configuration from environment variables (.env file), making the app secure and environment-agnostic.
 """
 
 from pydantic_settings import BaseSettings
@@ -11,7 +12,7 @@ from functools import lru_cache
 
 class Settings(BaseSettings):
     """
-    Application settings loaded from environment variables.
+    Application settings loaded from environment variables (.env).
     All sensitive data should be provided via environment variables.
     """
     
@@ -50,13 +51,14 @@ class Settings(BaseSettings):
     default_currency: str = Field(default="EUR", description="Default currency")
     max_dti_ratio: float = Field(default=0.43, description="Maximum debt-to-income ratio")
     
+    # a special inner class that tells Pydantic how to behave.
     class Config:
-        env_file = ".env"
-        env_file_encoding = "utf-8"
-        case_sensitive = False
-        extra = "ignore"
+        env_file = ".env"              # Where to find environment variables
+        env_file_encoding = "utf-8"    # File encoding (supports special chars)
+        case_sensitive = False         # API_KEY = api_key = Api_Key (all work!)
+        extra = "ignore"               # Ignore unknown env vars (don't error)
 
-
+# decorator to ensure settings are loaded only once and reused everywhere.
 @lru_cache()
 def get_settings() -> Settings:
     """
